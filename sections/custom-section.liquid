@@ -1,11 +1,12 @@
-<h1>{{ product.title }}</h1>
-<img src="{{ 'The_Illon_Danggi_Cleansing_Milk_500ml_detail1.jpg' | file_url }}" alt="Image Description">
+<div style="text-align: center;">
+  <h1>{{ product.title }}</h1>
+  <img src="{{ 'The_Illon_Danggi_Cleansing_Milk_500ml_detail1.jpg' | file_url }}" alt="Image Description">
+</div>
 
-{%  schema  %}  
+{% schema %}
 {
     "name": "Custom section",
     "settings": [],
     "presets": [{"name": "Default custom section"}]
-
 }
-{% endschema %} 
+{% endschema %}
