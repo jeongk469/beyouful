@@ -1,65 +1,72 @@
 {% schema %}
     {
-      "name": "Featured Products",
+      "name": "Simple Section",
       "settings": [
         {
           "type": "text",
-          "id": "section_title",
-          "label": "Section Title",
-          "default": "Featured Products"
+          "id": "title",
+          "label": "Title",
+          "default": "Welcome to Our Store!"
         },
         {
-          "type": "number",
-          "id": "products_to_show",
-          "label": "Number of Products to Show",
-          "default": 4
-        }
-      ],
-      "presets": [
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Discover amazing products curated just for you."
+        },
         {
-          "name": "Featured Products",
-          "category": "Products"
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+          "default": "/collections/all"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop Now"
         }
       ]
     }
     {% endschema %}
     
-    <section class="featured-products">
+    <div class="simple-section">
       <div class="container">
-        <h2>{{ section.settings.section_title }}</h2>
-        <div class="product-grid">
-          {% for product in collections.frontpage.products | limit: section.settings.products_to_show %}
-            <div class="product">
-              <a href="{{ product.url }}">
-                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-              </a>
-              <h3>{{ product.title }}</h3>
-              <p>{{ product.price | money }}</p>
-              <a href="{{ product.url }}" class="button">View Product</a>
-            </div>
-          {% endfor %}
-        </div>
+        <h2>{{ section.settings.title }}</h2>
+        <p>{{ section.settings.description }}</p>
+        <a href="{{ section.settings.button_link }}" class="btn">
+          {{ section.settings.button_text }}
+        </a>
       </div>
-    </section>
+    </div>
     
     <style>
-    .featured-products {
-      padding: 2rem 0;
-    }
-    .featured-products .product-grid {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .featured-products .product {
-      flex: 1 1 calc(25% - 1rem);
-      border: 1px solid #ccc;
-      padding: 1rem;
+    .simple-section {
       text-align: center;
+      padding: 40px 20px;
+      background-color: #f9f9f9;
     }
-    .featured-products .product img {
-      max-width: 100%;
-      height: auto;
+    .simple-section .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .simple-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .simple-section p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .simple-section .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .simple-section .btn:hover {
+      background-color: #0056b3;
     }
     </style>
-    
