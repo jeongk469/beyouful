@@ -4,7 +4,7 @@
     {% for i in (1..number_of_pics) %}
         <!-- Your code for each iteration (1, 2, 3, etc.) -->
         <p>Picture {{ i }}</p>
-        <img src="{{ product_name | append i | append: '.jpg' | file_url }}" alt="Image Description">
+        <img src="{{ product_name | append: i | append: '.jpg' | file_url }}" alt="Image Description">
     {% endfor %}
 </div>
 
