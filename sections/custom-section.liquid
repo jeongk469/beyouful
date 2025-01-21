@@ -1,6 +1,6 @@
 <div style="text-align: center;">
     {% assign number_of_pics = product.metafields.custom.number_of_detail_pics %}
-    {% assign product_name = product.title | handleize | append: "_detail"%}
+    {% assign product_name = product.title | replace: ' ', '_' | append: "_detail" %}
     {% for i in (1..number_of_pics) %}
         <!-- Your code for each iteration (1, 2, 3, etc.) -->
         <p>Picture {{ i }}</p>
