@@ -1,6 +1,11 @@
 <div style="text-align: center;">
-  <h1>{{ product.title }}</h1>
-  <img src="{{ 'The_Illon_Danggi_Cleansing_Milk_500ml_detail1.jpg' | file_url }}" alt="Image Description">
+    {% assign number_of_pics = product.metafields.custom.number_of_detail_pics %}
+    {% assign product_name = product.title | append: "_detail"%}
+    {% for i in (1..number_of_pics) %}
+        <!-- Your code for each iteration (1, 2, 3, etc.) -->
+        <p>Picture {{ i }}</p>
+        <img src="{{ product_name | append i | append: '.jpg' | file_url }}" alt="Image Description">
+    {% endfor %}
 </div>
 
 {% schema %}
