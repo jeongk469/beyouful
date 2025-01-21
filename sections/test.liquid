@@ -1,6 +1,73 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
+    {
+      "name": "t:sections.test.name",
+      "class": "section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Welcome to Our Store!"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Discover amazing products curated just for you."
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+          "default": "/collections/all"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        }
+      ]
+    }
+    {% endschema %}
+    
+    <div class="simple-section">
+      <div class="container">
+        <h2>{{ section.settings.title }}</h2>
+        <p>{{ section.settings.description }}</p>
+        <a href="{{ section.settings.button_link }}" class="btn">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+    
+    <style>
+    .simple-section {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+    }
+    .simple-section .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .simple-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .simple-section p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .simple-section .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .simple-section .btn:hover {
+      background-color: #0056b3;
+    }
+    </style>
