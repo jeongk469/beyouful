@@ -1,4 +1,14 @@
-<div style="text-align: center;">
+<style>
+    .custom-section {
+        text-align: center;
+    }
+    .custom-section img {
+        display: block;
+        margin: 10px auto; /* Center images and add some spacing */
+    }
+</style>
+
+<div class="custom-section">
     {% assign number_of_pics = product.metafields.custom.number_of_detail_pics %}
     {% assign product_name = product.title | replace: ' ', '_' | append: "_detail" %}
     {% for i in (1..number_of_pics) %}
