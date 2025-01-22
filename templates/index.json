@@ -51,7 +51,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -63,7 +63,7 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-65e3b35f-d671-402c-8d47-a4c71ea9154e",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
